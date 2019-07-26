@@ -45,26 +45,26 @@ public class App {
 
         String result ="============= 订餐明细 =============\n";
         if (ITEM0001>0)
-              result+=  "黄焖鸡 x "+ITEM0001+" = "+(ITEM0001*ITEM0001Price)+"元\n";
-            if (ITEM0013>0)
-             result+=  "肉夹馍 x "+ITEM0013+" = "+(ITEM0013*ITEM0013Price)+"元\n" ;
-              if (ITEM0022>0) result+= "凉皮 x "+ITEM0022+" = "+ITEM0022*ITEM0022Price+"元\n";
-              result+=  "-----------------------------------\n";
+            result+=  "黄焖鸡 x "+ITEM0001+" = "+(ITEM0001*ITEM0001Price)+"元\n";
+        if (ITEM0013>0)
+            result+=  "肉夹馍 x "+ITEM0013+" = "+(ITEM0013*ITEM0013Price)+"元\n" ;
+        if (ITEM0022>0) result+= "凉皮 x "+ITEM0022+" = "+ITEM0022*ITEM0022Price+"元\n";
+        result+=  "-----------------------------------\n";
 
-              int minPay=0;
-              if (price1!=0&&price2!=0&&price3!=0){
-                  minPay = Minimum(price1,price2,price3);
-              }else if (price3!=0&&price2==0){
-                  if (price1>price3){
-                      minPay=price3;
-                  }else minPay=price1;
-              }else if (price2!=0&&price3==0){
-                  if (price1>price2) minPay=price2;
-                  else minPay=price1;
-              }else minPay=price1;
+        int minPay=0;
+        if (price1!=0&&price2!=0&&price3!=0){
+            minPay = Minimum(price1,price2,price3);
+        }else if (price3!=0&&price2==0){
+            if (price1>price3){
+                minPay=price3;
+            }else minPay=price1;
+        }else if (price2!=0&&price3==0){
+            if (price1>price2) minPay=price2;
+            else minPay=price1;
+        }else minPay=price1;
         System.out.println("你花费的最少钱："+minPay);
         if(minPay==price1){
-                    result+="总计："+price1+"元" +"\n===================================";
+            result+="总计："+price1+"元" +"\n===================================";
         }
         if((price1!=price3)&&(minPay==price3)){
             result+="使用优惠:\n" +
